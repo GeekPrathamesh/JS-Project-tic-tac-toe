@@ -1,5 +1,11 @@
 let boxes = document.querySelectorAll(".box");
-let resetBtn = document.querySelectorAll("#reset-btn");
+let resetBtn = document.querySelector("#reset-btn");
+let newgamebtn = document.querySelector("#new-btn");
+let hide = document.querySelector(".hide");
+let hide1 = document.querySelector(".newtry");
+let msg = document.querySelector("#msg");
+
+
 
 let turnx = true; //player x and player y
 
@@ -45,12 +51,50 @@ for (let key of boxes) {
 
 const winnerCheck = ()=>{
     for(let pattern of winPatterns){
-        console.log(pattern[0],pattern[1],pattern[2]);
+        // console.log(pattern[0],pattern[1],pattern[2]);
         // console.log(boxes[pattern[0]].innerText,boxes[pattern[1]].innerText,boxes[pattern[2]].innerText);
         position1val=boxes[pattern[0]].innerText;
         position2val=boxes[pattern[1]].innerText;
         position3val=boxes[pattern[2]].innerText;
+
+        if(position1val!="" && position2val!="" && position3val!="" ){
+            if(position1val===position2val && position2val===position3val){
+                console.log("winner is player :",position1val );
+                showwinner(position1val);
+                disableboxes();
+            }
+        }
         
 
     }
 }
+
+const showwinner =(winner)=>{
+    msg.innerText=`Winner is ${position1val}`;
+    hide.classList.remove("hide");
+    hide1.classList.remove("newtry");
+}
+
+const resetgamebtn = () =>{
+enableboxes();
+turnx = true;
+hide.classList.add("hide");
+hide1.classList.add("newtry");
+}
+
+const enableboxes=()=>{
+    hide.classList.add("hide");
+    hide1.classList.add("newtry");
+    for (let box of boxes){
+        box.disabled=false;
+        box.innerText="";
+        
+    }
+}
+const disableboxes=()=>{
+    for (let box of boxes){
+        box.disabled=true;
+    }
+}
+newgamebtn.addEventListener("click",resetgamebtn);
+resetBtn.addEventListener("click",enableboxes);
