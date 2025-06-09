@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: rgb(102, 78, 76);
+  background-color: rgb(252, 210, 84);
   text-align: center;
 }
 .container {
@@ -49,16 +49,9 @@ border: none;
 button:hover{
   cursor: pointer;
 }
-#new-btn{
-padding: 1rem;
-border-radius: 0.8rem;
-background-color: black;
-color: aliceblue;
-font-size: 0.9rem;
-border: none;
-}
+
 #msg{
-color: yellow;
+color: rgb(255, 0, 0);
 font-size: 8vmin;
 }
 .hide{
