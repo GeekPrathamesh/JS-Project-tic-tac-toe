@@ -37,6 +37,7 @@ body {
   background-color: aliceblue;
   color: black;
 }
+
 #reset-btn{
 padding: 1rem;
 border-radius: 0.8rem;
@@ -59,4 +60,13 @@ font-size: 8vmin;
 }
 .newtry{
   height: 10vmin;
+}
+
+.box:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.box:hover:enabled {
+  background-color: #ddd;
 }

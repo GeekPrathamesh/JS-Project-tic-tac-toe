@@ -37,7 +37,7 @@ for (let key of boxes) {
       key.style.background = "yellow";
     }
 
-    key.disabled = true;
+    key.disabled = true; ////////////////////////////
 
     winnerCheck();
   });
@@ -74,7 +74,7 @@ const showwinner = (winner) => {
 };
 
 const resetgamebtn = () => {
-  enableboxes();
+  enableboxes();            //////////////////////
   turnx = true;
 
 };
@@ -92,5 +92,5 @@ const disableboxes = () => {
     box.disabled = true;
   }
 };
-newgamebtn.addEventListener("click", resetgamebtn);
+// newgamebtn.addEventListener("click", resetgamebtn);
 resetBtn.addEventListener("click", enableboxes);
